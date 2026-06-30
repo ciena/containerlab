@@ -15,15 +15,15 @@ the container.
 
 Ciena SAOS 10 nodes launched with containerlab can be managed via the following interfaces:
 
-=== "bash"
-    to connect to a `bash` shell of a running ciena_saos10 container:
-    ```bash
-    docker exec -it <container-name/id> bash
-    ```
 === "CLI via SSH"
     to connect to the SAOS CLI (password `ciena123`)
     ```bash
     ssh diag@<container-name/id>
+    ```
+=== "NETCONF"
+    NETCONF is exposed over SSH on port 830:
+    ```bash
+    ssh diag@<container-name/id> -p 830 -s netconf
     ```
 === "Console via telnet"
     to connect to the serial console
@@ -72,7 +72,7 @@ topology:
   nodes:
     saos-1:
       kind: ciena_saos10
-      image: vrnetlab/ciena_saos10:10-11-01-0248
+      image: vrnetlab/ciena_saos10:10-12-00-0228
       type: 5132
 ```
 
@@ -107,7 +107,7 @@ topology:
   nodes:
     saos-1:
       kind: ciena_saos10
-      image: vrnetlab/ciena_saos10:10-11-01-0248
+      image: vrnetlab/ciena_saos10:10-12-00-0228
       type: 5132
       # CLI partials (e.g. .cfg.partial / .txt.partial) work the same way
       startup-config: configuration.xml.partial

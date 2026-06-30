@@ -101,7 +101,6 @@
                         "ipinfusion_ocnos",
                         "checkpoint_cloudguard",
                         "ciena_saos10",
-                        "vr-ciena_saos10",
                         "ext-container",
                         "rare",
                         "cisco_xrd",
@@ -2130,9 +2129,6 @@
                             "$ref": "#/definitions/node-config"
                         },
                         "ciena_saos10": {
-                            "$ref": "#/definitions/node-config"
-                        },
-                        "vr-ciena_saos10": {
                             "$ref": "#/definitions/node-config"
                         },
                         "ext-container": {
